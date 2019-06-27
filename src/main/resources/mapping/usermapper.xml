@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo_log_demo.mapper.usermapper">
+
+    <resultMap id="BaseResultMap" type="com.example.demo_log_demo.bean.userbean">
+        <result column="id" jdbcType="INTEGER" property="id" />
+        <result column="username" jdbcType="VARCHAR" property="username" />
+        <result column="password" jdbcType="VARCHAR" property="password" />
+    </resultMap>
+
+    <select id="sel" resultType="com.example.demo_log_demo.bean.userbean">
+        select * from userinfo where id = #{id}
+    </select>
+
+    <select id="sep" resultType="com.example.demo_log_demo.bean.userbean">
+        select * from userinfo where username = #{username}
+    </select>
+
+    <select id="selo" resultType="com.example.demo_log_demo.bean.userbean">
+        select * from userinfo where username = #{username}
+    </select>
+
+    <delete id="del">
+        delete from userinfo where username = #{username}
+    </delete>
+
+    <update id="updateo">
+        update userinfo set username = #{2353456} where username =#{username}
+    </update>
+</mapper>
